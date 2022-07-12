@@ -8,7 +8,6 @@ const bodyParser = require("body-parser");
 const connectDB = require("./db/connect");
 
 const app = express();
-const PORT = 3000 || process.env.PORT;
 
 app.set("vew engine", "ejs");
 app.set("views", __dirname + "/views");
@@ -23,8 +22,8 @@ app.get("/", (req, res) => {
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI);
-    app.listen(PORT, () => {
-      console.log(`Server is listening on port http://www.localhost:${PORT}`);
+    app.listen(process.env.PORT || 3000, () => {
+      console.log(`Server is listening on port http://www.localhost:3000`);
     });
   } catch (error) {
     console.log(error);
