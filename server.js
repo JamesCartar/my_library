@@ -16,6 +16,10 @@ app.set("layout", "layouts/layout");
 app.use(expressLayouts);
 app.use(express.static("public"));
 
+app.get("/", (req, res) => {
+  res.send("adfas");
+});
+
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI);
