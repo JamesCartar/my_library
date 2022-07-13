@@ -6,18 +6,17 @@ const expressLayouts = require("express-ejs-layouts");
 const bodyParser = require("body-parser");
 
 const connectDB = require("./db/connect");
+const HomeRouter = require("./routes/index");
 
 const app = express();
 
-app.set("vew engine", "ejs");
+app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
 app.set("layout", "layouts/layout");
 app.use(expressLayouts);
 app.use(express.static("public"));
 
-app.get("/", (req, res) => {
-  res.send("adfas");
-});
+app.use("/", HomeRouter);
 
 const start = async () => {
   try {
