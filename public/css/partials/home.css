@@ -1,0 +1,173 @@
+.home {
+  padding: 4rem;
+  background: url(../../images/banner-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.home .row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0;
+}
+
+.content {
+  max-width: 550px;
+}
+
+.content h1 {
+  font-size: 1.9rem;
+  font-weight: normal;
+  line-height: 1.2;
+  margin: 0;
+  margin-top: 3rem;
+}
+
+h1 .text-style {
+  color: var(--primary);
+}
+
+.content p {
+  font-size: 0.9rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.2rem;
+}
+
+.content button {
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  margin-top: 1rem;
+  background-color: var(--primary);
+  border-radius: 1.5rem;
+  cursor: pointer;
+}
+
+.swiper {
+  max-width: 590px;
+  height: 350px;
+  text-align: center;
+  margin: 0;
+  margin-top: 2rem;
+  position: relative;
+  border-radius: 1rem;
+}
+
+.swiper-slide {
+  width: 200px !important;
+  height: auto !important;
+}
+
+.swiper-slide img {
+  width: 100%;
+}
+
+.swiper-slide:hover img {
+  transform: scale(1.1);
+}
+
+.stand {
+  max-width: 550px;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+/* media quaries */
+@media (max-width: 1170px) {
+  .home {
+    padding: 3rem 2rem;
+  }
+  .content h1 {
+    font-size: 1.5rem;
+  }
+  .swiper {
+    max-width: 500px;
+  }
+  .swiper-slide {
+    width: 170px !important;
+  }
+  .stand {
+    max-width: 450px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 922px) {
+  .swiper {
+    max-width: 300px;
+  }
+  .swiper-slide {
+    width: 150px !important;
+  }
+  .stand {
+    max-width: 300px;
+    bottom: 80px;
+  }
+}
+
+@media (max-width: 725px) {
+  .home {
+    padding: 2rem;
+  }
+  .home .row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .content {
+    width: 500px;
+  }
+  .content h1 {
+    margin-top: 0;
+  }
+  .swiper {
+    max-width: 500px;
+  }
+  .swiper-slide {
+    width: 170px !important;
+    height: 190px !important;
+  }
+  .stand {
+    max-width: 490px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .stand {
+    max-width: 400px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 425px) {
+  .home {
+    padding: 2rem 0.5rem;
+  }
+  .content h1 {
+    font-size: 1.3rem;
+  }
+  .content p {
+    font-size: 0.7rem;
+  }
+  .content button {
+    padding: 0.3rem 1rem;
+  }
+  .swiper {
+    width: 400px;
+  }
+  .swiper-slide {
+    width: 160px !important;
+    height: 180px !important;
+  }
+  .stand {
+    max-width: 100%;
+    bottom: 50px;
+  }
+}
+
+@media (max-width: 336px) {
+  .content h1 {
+    font-size: 1rem;
+  }
+}

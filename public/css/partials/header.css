@@ -2,10 +2,14 @@
 .header-1 {
   padding: 0.2rem 2rem;
   padding-bottom: 0.3rem;
+  background: url(../../images/banner-bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 10000;
 }
 
 .logo {
@@ -72,6 +76,10 @@
   cursor: pointer;
 }
 
+.hero a {
+  text-decoration: none;
+}
+
 .hero .menu {
   display: none;
 }
@@ -84,6 +92,7 @@
   justify-content: center;
   align-items: center;
   background-color: var(--primary);
+  overflow-x: hidden;
 }
 
 .header-2.active {
@@ -117,6 +126,70 @@
   text-decoration: none;
 }
 
+.dropdown {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown .link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  font-size: 0.6rem;
+  font-weight: bold;
+  max-width: 150px;
+  min-height: 50px;
+  text-align: right;
+  padding: 0.3rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.15rem);
+  border-radius: 0.25rem;
+  box-shadow: 1px 2px 5px 0 rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-20px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+/* .dropdown > .link:active + .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+} */
+
+.dropdown-menu.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-item {
+  padding: 0.1rem 0;
+}
+
+.dropdown-item:last-child {
+  text-align: center;
+  padding: 0.3rem;
+  margin-top: 0.3rem;
+  border-top: 1px solid var(--primary);
+}
+
+.dropdown-item:last-child > a {
+  font-weight: normal;
+  display: block;
+  padding: 0.2rem 0;
+  color: #fff;
+  background-color: rgb(253, 55, 55);
+}
+
 /* media Quaries */
 
 @media (max-width: 726px) {
@@ -131,41 +204,36 @@
     height: 100vh;
     padding: 0;
     display: block;
-    float: right;
+    position: absolute;
+    right: 0;
+    top: 54px;
     display: none;
   }
-
   .header-2.active {
     position: relative;
   }
-
   .header-2.menu {
     display: block;
   }
-
   .header-2 .navbar {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 0;
   }
-
   .nav-item {
     width: 100%;
   }
-
   .nav-link {
     display: block;
     width: 100%;
     padding: 0 0.5rem;
   }
-
   .header-1 {
     padding: 0.2rem 1rem;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
     position: relative;
   }
-
   .header-1 .search-form {
     width: 90%;
     position: absolute;

@@ -1,24 +1,40 @@
-<div class="login-form-page">
+<div class="form-page login-form-parent">
   <a href="/"><i class="fa-solid fa-xmark burger-close"></i></a>
-  <form action="/login" method="post" class="login-form">
+  <form action="/login" method="post" class="form">
     <h2>Login Here</h2>
 
     <div class="input-group">
       <div class="username">
         <i class="fa-solid fa-user" title="login"></i>
-        <input type="text" class="user" placeholder="Enter Username or Email" />
+        <input
+          type="text"
+          class="user"
+          name="user"
+          placeholder="Enter username or email"
+          required
+        />
       </div>
       <div class="username">
         <i class="fa-solid fa-lock"></i>
-        <input type="password" class="password" placeholder="Enter Password" />
+        <input
+          type="password"
+          class="password"
+          name="password"
+          placeholder="Enter password"
+          required
+        />
       </div>
+      <% if(locals.errorMessage) { %>
+      <p class="errorMessage"><%= errorMessage %></p>
+      <% } %>
     </div>
 
     <div class="submit">
       <button type="submit" class="login-btn">Login</button>
     </div>
+
+    <p class="ref-register">
+      Don't have an Account ? <a href="/register">Sign Up</a>
+    </p>
   </form>
-  <p class="ref-register">
-    Don't have an Account ? <a href="/register">Sign Up</a>
-  </p>
 </div>

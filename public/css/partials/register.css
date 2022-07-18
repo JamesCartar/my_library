@@ -1,0 +1,76 @@
+.filepond-hero {
+  padding: 0.4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary);
+}
+
+.filepond-hero > * {
+  font-size: 0.6rem;
+}
+
+.filepond--file {
+  width: 100%;
+  height: 100%;
+  align-items: block;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.filepond--root.filepond.filepond--hopper {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 0;
+  cursor: pointer;
+}
+
+.filepond--panel.filepond--panel-root {
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.filepond--drop-label.filepond--drop-label label {
+  visibility: hidden;
+  position: relative;
+}
+
+.filepond--drop-label.filepond--drop-label label::before {
+  visibility: visible;
+  color: rgba(77, 77, 77, 0.8);
+  content: "upload your profile";
+  position: absolute;
+  top: 50%;
+  left: 1%;
+  translate: (-50%, -50%);
+  cursor: pointer;
+}
+
+.filepond--image-preview-wrapper {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  translate: (-50%, -50%);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.filepond--root .filepond--credits {
+  display: none;
+}
+
+.filepond--file-action-button.filepond--file-action-button::after {
+  position: absolute;
+  left: -50px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  content: "";
+}
+
+.input-group {
+  padding-top: 0;
+}

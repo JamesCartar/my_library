@@ -5,10 +5,11 @@
       <a href="/" class="name">My Library</a>
     </div>
 
-    <form action="" class="search-form">
+    <form action="/" class="search-form" method="get">
       <input
         type="text"
         class="text-input"
+        name="title"
         placeholder="search for books....."
       />
       <button type="submit">
@@ -18,15 +19,33 @@
 
     <div class="hero">
       <i class="fa-solid fa-magnifying-glass search-button"></i>
+      <% if(locals.user) { %>
+      <div class="dropdown" data-dropdown>
+        <img
+          src="<%= user.profileImagePath %>"
+          alt="user image"
+          data-dropdown-button
+          class="link"
+        />
+        <div class="dropdown-menu">
+          <p class="dropdown-item"><%= user.name %></p>
+          <p class="dropdown-item"><%= user.email %></p>
+          <p class="dropdown-item"><a href="/login">logout</a></p>
+        </div>
+      </div>
+      <% } else { %>
       <a href="/login"
         ><i class="fa-solid fa-user login-icon" title="login"></i
       ></a>
+      <% } %>
       <i class="fa-solid fa-burger menu"></i>
     </div>
   </div>
   <nav class="header-2">
     <ul class="navbar">
-      <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Home</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="/category/11">Novel</a>
       </li>
@@ -36,7 +55,9 @@
       <li class="nav-item">
         <a class="nav-link" href="/category/22">Technology</a>
       </li>
-      <li class="nav-item"><a class="nav-link" href="/boutus">About us</a></li>
+      <li class="nav-item">
+        <a class="nav-link">more</a>
+      </li>
     </ul>
   </nav>
 </header>

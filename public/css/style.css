@@ -2,6 +2,8 @@
 
 @import "./partials/header.css";
 @import "./partials/login.css";
+@import "./partials/register.css";
+@import "./partials/home.css";
 
 :root {
   --primary: #128f12;
@@ -24,6 +26,9 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  height: 300rem;
+.errorMessage {
+  font-size: 0.8rem;
+  color: red;
+  margin-top: 0.8rem;
+  margin-left: 1.1rem;
 }

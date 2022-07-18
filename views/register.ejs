@@ -1,0 +1,53 @@
+<div class="form-page register-form">
+  <a href="/"><i class="fa-solid fa-xmark burger-close"></i></a>
+  <form action="/register" method="post" class="form">
+    <div class="filepond-hero">
+      <input type="file" name="profileImage" class="filepond" />
+    </div>
+
+    <div class="input-group">
+      <div class="username">
+        <i class="fa-solid fa-user" title="login"></i>
+        <input type="text" class="user" name="name" placeholder="name" />
+      </div>
+      <div class="username">
+        <i class="fa-solid fa-at login"></i>
+        <input
+          type="text"
+          class="user"
+          name="email"
+          placeholder="email address"
+        />
+      </div>
+      <div class="username">
+        <i class="fa-solid fa-lock"></i>
+        <input
+          type="password"
+          class="password"
+          name="password"
+          placeholder="password"
+        />
+      </div>
+      <div class="username">
+        <i class="fa-solid fa-lock"></i>
+        <input
+          type="password"
+          class="password"
+          name="confirmPassword"
+          placeholder="confirm password"
+        />
+      </div>
+      <% if(locals.errorMessage) { %>
+      <p class="errorMessage"><%= errorMessage %></p>
+      <% } %>
+    </div>
+
+    <div class="submit">
+      <button type="submit" class="login-btn">Register</button>
+    </div>
+
+    <p class="ref-register">
+      Already has an Account ? <a href="/login">Login</a>
+    </p>
+  </form>
+</div>
