@@ -93,6 +93,8 @@
   align-items: center;
   background-color: var(--primary);
   overflow-x: hidden;
+
+  z-index: 10000;
 }
 
 .header-2.active {

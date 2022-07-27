@@ -1,0 +1,68 @@
+.book-types {
+  background: url(../../images/banner-bg.jpg) no-repeat;
+  padding: 0 1rem;
+}
+.slider-header {
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.slider-header a {
+  color: var(--primary);
+  text-decoration: none;
+}
+.slider-title {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+.slider-title span {
+  color: var(--primary);
+}
+.slider-container {
+  width: 97vw;
+  height: 240px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+.inner-slider {
+  width: 1900px;
+  display: flex;
+  gap: 5px;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.card {
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+}
+.card img {
+  width: 80%;
+}
+
+/* media quaries */
+@media (max-width: 620px) {
+  .slider-header .slider-title {
+    font-size: 1.3rem;
+  }
+  .slider-header a {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 460px) {
+  .slider-header .slider-title {
+    font-size: 1rem;
+  }
+  .slider-header a {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 360px) {
+  .slider-header .slider-title {
+    font-size: 0.8rem;
+  }
+}

@@ -1,5 +1,7 @@
 .home {
+  width: 100vw;
   padding: 4rem;
+  padding-bottom: 0;
   background: url(../../images/banner-bg.jpg) no-repeat;
   background-size: cover;
   background-position: center;
@@ -44,8 +46,9 @@ h1 .text-style {
 
 .swiper {
   max-width: 590px;
-  height: 350px;
+  height: 300px;
   text-align: center;
+  padding-bottom: 0.5rem;
   margin: 0;
   margin-top: 2rem;
   position: relative;
@@ -53,22 +56,23 @@ h1 .text-style {
 }
 
 .swiper-slide {
-  width: 200px !important;
-  height: auto !important;
+  width: 180px !important;
+  height: 240px !important;
 }
 
 .swiper-slide img {
-  width: 100%;
+  width: 70%;
+  box-shadow: -8px 8px 10px rgba(87, 87, 87, 0.8);
 }
 
 .swiper-slide:hover img {
-  transform: scale(1.1);
+  transform: scale(0.9);
 }
 
 .stand {
   max-width: 550px;
   position: absolute;
-  bottom: -20px;
+  bottom: -10px;
   left: 50%;
   transform: translate(-50%, 0);
 }
@@ -76,7 +80,7 @@ h1 .text-style {
 /* media quaries */
 @media (max-width: 1170px) {
   .home {
-    padding: 3rem 2rem;
+    padding: 3rem 2rem 0 2rem;
   }
   .content h1 {
     font-size: 1.5rem;
@@ -89,7 +93,10 @@ h1 .text-style {
   }
   .stand {
     max-width: 450px;
-    bottom: 20px;
+    bottom: 10px;
+  }
+  .slider {
+    margin-top: -50px;
   }
 }
 
@@ -102,13 +109,13 @@ h1 .text-style {
   }
   .stand {
     max-width: 300px;
-    bottom: 80px;
+    bottom: 70px;
   }
 }
 
 @media (max-width: 725px) {
   .home {
-    padding: 2rem;
+    padding: 2rem 2rem 0 2rem;
   }
   .home .row {
     flex-wrap: wrap;
@@ -129,7 +136,7 @@ h1 .text-style {
   }
   .stand {
     max-width: 490px;
-    bottom: 20px;
+    bottom: 0;
   }
 }
 
@@ -142,7 +149,7 @@ h1 .text-style {
 
 @media (max-width: 425px) {
   .home {
-    padding: 2rem 0.5rem;
+    padding: 2rem 0.5rem 0 0.5rem;
   }
   .content h1 {
     font-size: 1.3rem;

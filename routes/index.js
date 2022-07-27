@@ -3,17 +3,58 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 
 const userModel = require("../models/user");
+const pdfBookModel = require("../models/pdfbook");
 
 const imageMimeTypes = ["image/jpeg", "image/png", "image/gif", "image/jpg"];
 
-let hein;
+let userInfo;
 
 router.get("/", async (req, res) => {
-  const homeBooks = await userModel.find({}).limit(10);
-  // console.log(homeBooks);
-  res.render("home", { user: hein });
-  // res.send({ count: homeBooks.length, data: homeBooks });
+  const homeBooks = await getPdfBooks("Most Popular")
+    .skip(Math.floor(Math.random() * 10))
+    .limit(10);
+  const educationBooks = await getPdfBooks("Academic & Education");
+  const artBooks = await getPdfBooks("Art");
+  const biographyBooks = await getPdfBooks("Biography");
+  const businessBooks = await getPdfBooks("Business & Career");
+  const childrenBooks = await getPdfBooks("Children & Youth");
+  const enviromentBooks = await getPdfBooks("Enviroment");
+  const fictionBooks = await getPdfBooks("Fiction And Literature");
+  const healthBooks = await getPdfBooks("Health & Fitness");
+  const lifestyleBooks = await getPdfBooks("Lifestyle");
+  const personalBooks = await getPdfBooks("Personal Growth");
+  const politicsBooks = await getPdfBooks("Politics & Laws");
+  const religionBooks = await getPdfBooks("Religion");
+  const scienceBooks = await getPdfBooks("Science & Research");
+  const technologyBooks = await getPdfBooks("Technology");
+
+  res.render("home", {
+    technologyBooks,
+    enviromentBooks,
+    lifestyleBooks,
+    user: userInfo,
+    biographyBooks,
+    educationBooks,
+    businessBooks,
+    childrenBooks,
+    personalBooks,
+    politicsBooks,
+    religionBooks,
+    fictionBooks,
+    scienceBooks,
+    healthBooks,
+    homeBooks,
+    artBooks,
+  });
 });
+
+function getPdfBooks(category) {
+  return pdfBookModel
+    .find({
+      category: category,
+    })
+    .limit(12);
+}
 
 router.get("/login", (req, res) => {
   res.render("login");
@@ -27,7 +68,7 @@ router.post("/login", async (req, res) => {
   try {
     if (userData != null && userData != "") {
       if (await bcrypt.compare(password, userData.password)) {
-        hein = userData;
+        userInfo = userData;
         res.redirect("/");
       } else {
         res.render("login", { errorMessage: "Wrong password !" });
@@ -60,7 +101,7 @@ router.post("/register", async (req, res) => {
   saveProfile(user, profileImage);
   try {
     const userData = await user.save();
-    hein = userData;
+    userInfo = userData;
     res.redirect("/");
   } catch (error) {
     const errorData = error.message.split(" ");

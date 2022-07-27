@@ -8,29 +8,42 @@
       </h1>
       <p>
         You can download over 800 pdf book for free. No annoying ads, no
-        download limits, enjoy it
+        download limits, enjoy it ....
       </p>
       <button>Explore</button>
     </div>
     <div class="swiper book-slider">
       <div class="swiper-wrapper">
+        <% if(homeBooks) { %> <% homeBooks.forEach(book => { %>
         <a href="#" class="swiper-slide"
-          ><img src="/images/book-1.png" alt="book image"
+          ><img src="<%= book.coverImage %>" alt="book image"
         /></a>
-        <a href="#" class="swiper-slide"
-          ><img src="/images/book-2.png" alt="book image"
-        /></a>
-        <a href="#" class="swiper-slide"
-          ><img src="/images/book3.png" alt="book image"
-        /></a>
-        <a href="#" class="swiper-slide"
-          ><img src="/images/book-4.png" alt="book image"
-        /></a>
-        <a href="#" class="swiper-slide"
-          ><img src="/images/book5.png" alt="book image"
-        /></a>
+        <% }); %> <% } %>
       </div>
       <img src="/images/stand.png" class="stand" alt="" />
     </div>
   </div>
+</section>
+<section class="book-types" id="book-types">
+  <%- include('./partials/category', {title: 'Academic & Education', books:
+  educationBooks, category: 'academic'}) %> <%- include('./partials/category',
+  {title: 'Art', books: artBooks, category: 'art'}) %><%-
+  include('./partials/category', {title: 'Biography', books: biographyBooks,
+  category: 'biography'}) %> <%- include('./partials/category', {title:
+  'Business & Career', books: businessBooks, category: 'business'}) %> <%-
+  include('./partials/category', {title: 'Children & Youth', books:
+  childrenBooks, category: 'children'}) %> <%- include('./partials/category',
+  {title: 'Enviroment', books: enviromentBooks, category: 'enviroment'}) %> <%-
+  include('./partials/category', {title: 'Fiction & Literature', books:
+  fictionBooks, category: 'fiction'}) %> <%- include('./partials/category',
+  {title: 'Health & Fitness', books: healthBooks, category: 'health'}) %> <%-
+  include('./partials/category', {title: 'Lifestyle', books: lifestyleBooks,
+  category: 'lifestyle'}) %> <%- include('./partials/category', {title:
+  'Personal Growth', books: personalBooks, category: 'personal'}) %> <%-
+  include('./partials/category', {title: 'Politics & Laws', books:
+  politicsBooks, category: 'politics'}) %> <%- include('./partials/category',
+  {title: 'Religion', books: religionBooks, category: 'religion'}) %> <%-
+  include('./partials/category', {title: 'Science & Research', books:
+  scienceBooks, category: 'science'}) %> <%- include('./partials/category',
+  {title: 'Technology', books: technologyBooks, category: 'technology'}) %>
 </section>

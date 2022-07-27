@@ -7,6 +7,11 @@ const bodyParser = require("body-parser");
 
 const connectDB = require("./db/connect");
 const HomeRouter = require("./routes/index");
+const categoryRouter = require("./routes/category");
+
+// models
+// const userModel = require("../models/user");
+// const pdfBookModel = require("../models/pdfbook");
 
 const app = express();
 
@@ -18,6 +23,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false, limit: "10mb" }));
 
 app.use("/", HomeRouter);
+app.use("/category", categoryRouter);
 
 const start = async () => {
   try {

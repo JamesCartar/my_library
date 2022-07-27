@@ -4,6 +4,7 @@
 @import "./partials/login.css";
 @import "./partials/register.css";
 @import "./partials/home.css";
+@import "./partials/category.css";
 
 :root {
   --primary: #128f12;
@@ -24,6 +25,8 @@ html {
   overflow-x: hidden;
   scroll-padding-top: 5rem;
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
 .errorMessage {
