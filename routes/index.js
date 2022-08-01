@@ -12,7 +12,7 @@ let userInfo;
 router.get("/", async (req, res) => {
   const homeBooks = await getPdfBooks("Most Popular")
     .skip(Math.floor(Math.random() * 10))
-    .limit(10);
+    .limit(20);
   const educationBooks = await getPdfBooks("Academic & Education");
   const artBooks = await getPdfBooks("Art");
   const biographyBooks = await getPdfBooks("Biography");
@@ -53,7 +53,7 @@ function getPdfBooks(category) {
     .find({
       category: category,
     })
-    .limit(12);
+    .limit(25);
 }
 
 router.get("/login", (req, res) => {

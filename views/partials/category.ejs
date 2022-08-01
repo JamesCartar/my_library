@@ -4,11 +4,11 @@
     <a href="#">See All >></a>
   </div>
 
-  <div class="slider-container <%= category %>">
-    <div class="inner-slider <%= category %>">
+  <div class="swiper mySwiper <%= category %>">
+    <div class="swiper-wrapper <%= category %>">
       <% if(locals.books) { %> <% books.forEach(book => { %>
-      <div class="card">
-        <a href="#" class="swiper-slide"
+      <div class="swiper-slide">
+        <a href="#" target="_blank"
           ><img src="<%= book.coverImage %>" alt="book image"
         /></a>
       </div>

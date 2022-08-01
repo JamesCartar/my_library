@@ -13,16 +13,11 @@
   gap: 0;
 }
 
-.content {
-  max-width: 550px;
-}
-
 .content h1 {
   font-size: 1.9rem;
   font-weight: normal;
   line-height: 1.2;
   margin: 0;
-  margin-top: 3rem;
 }
 
 h1 .text-style {
@@ -44,25 +39,48 @@ h1 .text-style {
   cursor: pointer;
 }
 
-.swiper {
-  max-width: 590px;
-  height: 300px;
-  text-align: center;
-  padding-bottom: 0.5rem;
-  margin: 0;
-  margin-top: 2rem;
+.popularBooks {
+  max-width: 560px;
+  max-height: 300px;
+  padding-top: 1rem;
   position: relative;
-  border-radius: 1rem;
+}
+
+.home .swiper {
+  max-width: 100%;
+  min-height: 250px;
 }
 
 .swiper-slide {
-  width: 180px !important;
-  height: 240px !important;
+  text-align: center;
+  font-size: 18px;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+
+a.swiper-slide > img {
+  width: 80%;
+  height: auto;
 }
 
 .swiper-slide img {
-  width: 70%;
-  box-shadow: -8px 8px 10px rgba(87, 87, 87, 0.8);
+  display: block;
+  width: 100%;
+  height: 100%;
+  box-shadow: -10px 5px 10px rgba(0, 0, 0, 0.8);
+  object-fit: cover;
 }
 
 .swiper-slide:hover img {
@@ -70,10 +88,10 @@ h1 .text-style {
 }
 
 .stand {
-  max-width: 550px;
+  max-width: 100%;
   position: absolute;
-  bottom: -10px;
   left: 50%;
+  bottom: 10px;
   transform: translate(-50%, 0);
 }
 
@@ -85,65 +103,46 @@ h1 .text-style {
   .content h1 {
     font-size: 1.5rem;
   }
-  .swiper {
-    max-width: 500px;
-  }
-  .swiper-slide {
-    width: 170px !important;
-  }
-  .stand {
-    max-width: 450px;
-    bottom: 10px;
-  }
-  .slider {
+  .home .slider {
     margin-top: -50px;
   }
 }
 
-@media (max-width: 922px) {
-  .swiper {
-    max-width: 300px;
-  }
-  .swiper-slide {
-    width: 150px !important;
-  }
-  .stand {
-    max-width: 300px;
-    bottom: 70px;
+@media (max-width: 982px) {
+  .content h1 {
+    font-size: 1.2rem;
   }
 }
 
-@media (max-width: 725px) {
+@media (max-width: 916px) {
   .home {
     padding: 2rem 2rem 0 2rem;
   }
   .home .row {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
   }
   .content {
-    width: 500px;
+    width: 650px;
   }
   .content h1 {
+    font-size: 1.5rem;
     margin-top: 0;
-  }
-  .swiper {
-    max-width: 500px;
-  }
-  .swiper-slide {
-    width: 170px !important;
-    height: 190px !important;
-  }
-  .stand {
-    max-width: 490px;
-    bottom: 0;
   }
 }
 
 @media (max-width: 560px) {
+  .popularBooks {
+    max-width: 400px;
+    height: auto;
+  }
+  .swiper-slide {
+    height: 70%;
+  }
   .stand {
     max-width: 400px;
-    bottom: 20px;
+    bottom: 40px;
   }
 }
 
@@ -160,16 +159,14 @@ h1 .text-style {
   .content button {
     padding: 0.3rem 1rem;
   }
-  .swiper {
-    width: 400px;
-  }
-  .swiper-slide {
-    width: 160px !important;
-    height: 180px !important;
+}
+
+@media (max-width: 404px) {
+  .popularBooks {
+    max-width: 300px;
   }
   .stand {
-    max-width: 100%;
-    bottom: 50px;
+    max-width: 300px;
   }
 }
 

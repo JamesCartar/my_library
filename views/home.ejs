@@ -12,13 +12,15 @@
       </p>
       <button>Explore</button>
     </div>
-    <div class="swiper book-slider">
-      <div class="swiper-wrapper">
-        <% if(homeBooks) { %> <% homeBooks.forEach(book => { %>
-        <a href="#" class="swiper-slide"
-          ><img src="<%= book.coverImage %>" alt="book image"
-        /></a>
-        <% }); %> <% } %>
+    <div class="popularBooks">
+      <div class="swiper book-slider">
+        <div class="swiper-wrapper">
+          <% if(homeBooks) { %> <% homeBooks.forEach(book => { %>
+          <a href="#" class="swiper-slide"
+            ><img src="<%= book.coverImage %>" alt="book image"
+          /></a>
+          <% }); %> <% } %>
+        </div>
       </div>
       <img src="/images/stand.png" class="stand" alt="" />
     </div>

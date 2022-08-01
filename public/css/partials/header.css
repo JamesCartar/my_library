@@ -92,10 +92,14 @@
   justify-content: center;
   align-items: center;
   background-color: var(--primary);
-  overflow-x: hidden;
 
   z-index: 10000;
+  position: relative;
 }
+
+/* .header-3 {
+  display: none;
+} */
 
 .header-2.active {
   position: fixed;
@@ -107,20 +111,61 @@
 .header-2 .navbar {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0 0.8rem;
+  transition: top 1s;
+}
+
+.header-2 .navbar:last-child {
+  background-color: var(--primary);
+  flex-wrap: nowrap;
+  position: absolute;
+  left: 49%;
+  transform: translate(-50%, 0);
+  z-index: -100;
+  display: none;
+  opacity: 0;
+  transition: top 1s;
+}
+
+.header-2 .navbar.second.active {
+  display: flex;
+  top: 100%;
+  opacity: 1;
 }
 
 .nav-item {
-  padding: 0.6rem 0.4rem;
   list-style-type: none;
+  padding: 0.5rem;
 
+  position: relative;
+  transition: all 0.5s;
+  overflow: hidden;
+}
+
+.nav-item::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  transform: translateX(-110%);
   transition: all 0.5s;
 }
 
-.nav-item:hover {
-  background-color: rgb(18, 87, 18);
+.nav-item span {
+  padding: 0 8px;
+  font-weight: 900;
+  color: #fff;
+  cursor: pointer;
+}
+
+.nav-item:hover::after {
+  transform: translateX(0);
 }
 
 .nav-link {
@@ -204,6 +249,7 @@
   .header-2 {
     width: 200px;
     height: 100vh;
+    overflow-y: scroll;
     padding: 0;
     display: block;
     position: absolute;
@@ -211,9 +257,19 @@
     top: 54px;
     display: none;
   }
+
   .header-2.active {
     position: relative;
   }
+
+  .header-2 .navbar:last-child {
+    position: relative;
+    top: 0;
+  }
+  .header-2 .navbar.second.active {
+    top: 0;
+  }
+
   .header-2.menu {
     display: block;
   }
