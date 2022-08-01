@@ -52,7 +52,7 @@ navMoreButton.addEventListener("click", () => {
 
 // swiper
 var swiper = new Swiper(".book-slider", {
-  slidesPerView: 1,
+  slidesPerView: 2,
   loop: true,
   shortSwipes: true,
   watchSlidesProgress: true,
@@ -61,7 +61,7 @@ var swiper = new Swiper(".book-slider", {
     disabledOnInteraction: true,
   },
   breakpoints: {
-    384: {
+    284: {
       slidesPerView: 2,
     },
     484: {
