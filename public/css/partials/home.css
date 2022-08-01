@@ -134,7 +134,7 @@ a.swiper-slide > img {
 
 @media (max-width: 560px) {
   .popularBooks {
-    max-width: 400px;
+    max-width: 350px;
     height: auto;
   }
   .swiper-slide {
@@ -142,7 +142,7 @@ a.swiper-slide > img {
   }
   .stand {
     max-width: 400px;
-    bottom: 40px;
+    bottom: 20px;
   }
 }
 

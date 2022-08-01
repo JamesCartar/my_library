@@ -54,6 +54,8 @@ navMoreButton.addEventListener("click", () => {
 var swiper = new Swiper(".book-slider", {
   slidesPerView: 1,
   loop: true,
+  shortSwipes: true,
+  watchSlidesProgress: true,
   autoplay: {
     delay: 3000,
     disabledOnInteraction: true,
@@ -89,7 +91,9 @@ FilePond.parse(document.body);
 // category Swiper
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 2,
+  watchSlidesProgress: true,
   spaceBetween: 0,
+  shortSwipes: true,
   breakpoints: {
     400: {
       slidesPerView: 3,
