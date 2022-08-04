@@ -15,3 +15,16 @@
   height: auto;
   background: url("../../images/banner-bg.jpg");
 }
+
+.items {
+  width: 130px;
+  height: 180px;
+  box-shadow: -10px 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 525px) {
+  .items {
+    max-width: 100px;
+    height: 150px;
+  }
+}
