@@ -9,7 +9,7 @@
     <div class="swiper-wrapper">
       <% if(locals.similarBooks) { %> <% similarBooks.forEach(book => { %>
       <div class="swiper-slide">
-        <a href="/<%= book._id %>" 
+        <a href="/<%= book.id %>" 
           ><img src="<%= book.coverImage %>" alt="book image"
         /></a>
       </div>

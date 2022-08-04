@@ -16,7 +16,7 @@
       <div class="swiper book-slider">
         <div class="swiper-wrapper">
           <% if(homeBooks) { %> <% homeBooks.forEach(book => { %>
-          <a href="/<%= book._id %>" class="swiper-slide"
+          <a href="/<%= book.id %>" class="swiper-slide"
             ><img src="<%= book.coverImage %>" alt="book image"
           /></a>
           <% }); %> <% } %>
@@ -32,8 +32,8 @@
   include('./partials/category', {title: 'Art', books: artBooks, category:
   'art', num: '15'}) %> <%- include('./partials/category', {title: 'Psychology',
   books: psychologyBooks, category: 'psychology', num: '73'}) %> <%-
-  include('./partials/category', {title: 'Enviroment', books: enviromentBooks,
-  category: 'enviroment', num: '77'}) %> <%- include('./partials/category',
+  include('./partials/category', {title: 'Environment', books: enviromentBooks,
+  category: 'environment', num: '77'}) %> <%- include('./partials/category',
   {title: 'Fiction & Literature', books: fictionBooks, category: 'fiction' ,
   num: '11'}) %> <%- include('./partials/category', {title: 'Health & Fitness',
   books: healthBooks, category: 'health', num: '13'}) %> <%-

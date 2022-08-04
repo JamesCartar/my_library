@@ -4,7 +4,7 @@
 />
 <div class="hein">
   <% if(locals.result) { %> <% result.map(book => { %>
-  <a href="/<%= book._id %>" class="items d-block mx-1">
+  <a href="/<%= book.id %>" class="items d-block mx-1">
     <img class="m-2" src="<%= book.coverImage %>" alt="book image" />
   </a>
   <% }) %> <% } %>
