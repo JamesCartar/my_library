@@ -3,12 +3,8 @@ const router = express.Router();
 const pdfBookModel = require("../models/pdfbook");
 
 router.get("/111", async (req, res) => {
-  const result = await getPdfBooks("Art");
-  const Photography = await getPdfBooks("Photography");
-  const Painting = await getPdfBooks("Painting & Drawing");
-  const Craft = await getPdfBooks("Craft & Hobbies");
-  const Architecture = await getPdfBooks("Architecture");
-  res.send([...result, ...Photography, ...Painting, ...Craft, ...Architecture]);
+  const result = await getPdfBooks("Most Popular");
+  res.render("category.ejs", { result });
 });
 
 router.get("/11", async (req, res) => {

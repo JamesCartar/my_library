@@ -7,16 +7,16 @@
         <span class="text-style">to stay</span> where we are
       </h1>
       <p>
-        You can download over 800 pdf book for free. No annoying ads, no
+        You can download over 4500 pdf book for free. No annoying ads, no
         download limits, enjoy it ....
       </p>
-      <button>Explore</button>
+      <a href="/categories/111"><button>Explore</button></a>
     </div>
     <div class="popularBooks">
       <div class="swiper book-slider">
         <div class="swiper-wrapper">
           <% if(homeBooks) { %> <% homeBooks.forEach(book => { %>
-          <a href="#" class="swiper-slide"
+          <a href="/<%= book._id %>" class="swiper-slide"
             ><img src="<%= book.coverImage %>" alt="book image"
           /></a>
           <% }); %> <% } %>
@@ -39,8 +39,8 @@
   books: healthBooks, category: 'health', num: '13'}) %> <%-
   include('./partials/category', {title: 'Lifestyle', books: lifestyleBooks,
   category: 'lifestyle' , num: '100'}) %> <%- include('./partials/category',
-  {title: 'Personal Growth', books: personalBooks, category: 'personal' , num:
-  '78'}) %> <%- include('./partials/category', {title: 'Politics & Laws', books:
+  {title: 'Business & Career', books: businessBooks, category: 'business' , num:
+  '87'}) %> <%- include('./partials/category', {title: 'Politics & Laws', books:
   politicsBooks, category: 'politics', num: '99'}) %> <%-
   include('./partials/category', {title: 'Religion', books: religionBooks,
   category: 'religion', num: '22'}) %> <%- include('./partials/category', {

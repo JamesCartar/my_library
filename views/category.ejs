@@ -4,7 +4,9 @@
 />
 <div class="hein">
   <% if(locals.result) { %> <% result.map(book => { %>
-  <img class="items m-2" src="<%= book.coverImage %>" alt="book image" />
+  <a href="/<%= book._id %>" class="items d-block mx-1">
+    <img class="m-2" src="<%= book.coverImage %>" alt="book image" />
+  </a>
   <% }) %> <% } %>
 </div>
 <div
@@ -15,7 +17,7 @@
     class="data container d-flex flex-wrap align-items-center justify-content-center"
     style="width: 100%; height: auto"
   ></div>
-  <ul id="pagination-demo" class="pagination-sm mt-1"></ul>
+  <ul id="pagination-demo" class="pagination-sm mt-3"></ul>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

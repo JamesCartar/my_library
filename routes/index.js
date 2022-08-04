@@ -56,6 +56,21 @@ function getPdfBooks(category) {
     .limit(25);
 }
 
+router.get("/search", async (req, res) => {
+  let bookName = req.query.title;
+  let book = await pdfBookModel.findOne({ title: bookName });
+  let similarBooks = await pdfBookModel
+    .find({ category: book.category })
+    .limit(25);
+
+  if ((book != null) & (book != "")) {
+    res.render("searchBook", { book, similarBooks });
+    // res.send(book);
+  } else {
+    res.render("bookNotFound", { bookName, similarBook });
+  }
+});
+
 router.get("/login", (req, res) => {
   res.render("login");
 });
@@ -130,6 +145,15 @@ router.post("/register", async (req, res) => {
       errorMessage: message || error.message,
     });
   }
+});
+
+router.get("/:id", async (req, res) => {
+  let bookId = req.params.id;
+  let book = await pdfBookModel.findOne({ _id: bookId });
+  let similarBooks = await pdfBookModel
+    .find({ category: book.category })
+    .limit(25);
+  res.render("searchBook", { book, similarBooks });
 });
 
 function saveProfile(user, urlEncoded) {

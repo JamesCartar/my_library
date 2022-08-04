@@ -5,13 +5,16 @@
       <a href="/" class="name">My Library</a>
     </div>
 
-    <form action="/" class="search-form" method="get">
-      <input
-        type="text"
-        class="text-input"
-        name="title"
-        placeholder="search for books....."
-      />
+    <form action="/search" class="search-form" method="get" autocomplete="off">
+      <div class="autocomplete">
+        <input
+          type="text"
+          class="text-input"
+          name="title"
+          placeholder="search for books....."
+        />
+      </div>
+
       <button type="submit">
         <i class="fa-solid fa-magnifying-glass search-icon"></i>
       </button>

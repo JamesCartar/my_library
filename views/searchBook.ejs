@@ -1,0 +1,57 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+/>
+<div class="container-fluid book-container">
+  <div class="book-container container bg-faded pt-5">
+    <div class="row">
+      <div
+        class="col-12 col-md-3 col-lg-2 p-0 d-flex justify-content-center align-items-center d-md-block"
+      >
+        <img
+          src="<%= book.coverImage %>"
+          alt="<%= book.title %>"
+          class="img-thumbnail"
+          style="width: 200px; height: auto"
+        />
+      </div>
+      <div class="col-12 col-md-9 col-lg-10">
+        <h3><%= book.title %></h3>
+        <div class="row">
+          <p class="col col-md-3">Page Count</p>
+          <p class="col"><%= book.pageCount %></p>
+        </div>
+        <div class="row">
+          <p class="col col-md-3">FileSize</p>
+          <p class="col m-0 mb-1"><%= book.fileSize %></p>
+        </div>
+        <div class="row">
+          <p class="col col-md-3">Publish at</p>
+          <p class="col"><%= book.publishAdt.getFullYear() %></p>
+        </div>
+        <div class="row">
+          <p class="col m-0 mb-1"><%= book.bookInfo.split('_').join(' ') %></p>
+        </div>
+        <div class="row mt-3">
+          <p class="col m-0 mb-1">
+            <a
+              href="<%= book.previewLink %>"
+              class="btn btn-secondary mr-2"
+              target="_blank"
+              >Preview</a
+            >
+            <a
+              href="<%= book.downloadLink %>"
+              class="btn btn-success"
+              target="_blank"
+              >Download</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <p class="mt-2"><%= book.quote %></p>
+  </div>
+  <%- include('./partials/similarBook.ejs', {title: book.category, books:
+  similarBooks}) %>
+</div>

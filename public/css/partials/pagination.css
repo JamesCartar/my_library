@@ -22,9 +22,43 @@
   box-shadow: -10px 5px 10px rgba(0, 0, 0, 0.8);
 }
 
+.bookNotFound {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+}
+
+.bookNotFound h3 {
+  color: var(--primary);
+}
+
+.book-container {
+  background: url("../../images/banner-bg.jpg");
+}
+
+@media (max-width: 768px) {
+  .book-container h3 {
+    font-size: 1.1rem;
+
+    margin: 1rem 0;
+  }
+  .book-container p {
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 525px) {
   .items {
-    max-width: 100px;
+    max-width: 120px;
     height: 150px;
+  }
+  .bookNotFound h1 {
+    font-size: 1.2rem;
+  }
+  .bookNotFound h3 {
+    font-size: 1rem;
   }
 }
