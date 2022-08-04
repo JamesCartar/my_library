@@ -58,6 +58,7 @@ function getPdfBooks(category) {
 
 router.get("/search", async (req, res) => {
   let bookName = req.query.title;
+  console.log(typeof bookName);
   let book = await pdfBookModel.findOne({ title: bookName });
   let similarBooks = await pdfBookModel
     .find({ category: book.category })
@@ -67,7 +68,7 @@ router.get("/search", async (req, res) => {
     res.render("searchBook", { book, similarBooks });
     // res.send(book);
   } else {
-    res.render("bookNotFound", { bookName, similarBook });
+    res.render("bookNotFound", { bookName });
   }
 });
 
@@ -147,7 +148,7 @@ router.post("/register", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+router.get("/book/:id", async (req, res) => {
   let bookId = req.params.id;
   let book = await pdfBookModel.findOne({ _id: bookId });
   let similarBooks = await pdfBookModel

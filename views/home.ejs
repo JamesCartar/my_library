@@ -16,7 +16,7 @@
       <div class="swiper book-slider">
         <div class="swiper-wrapper">
           <% if(homeBooks) { %> <% homeBooks.forEach(book => { %>
-          <a href="/<%= book.id %>" class="swiper-slide"
+          <a href="/book/<%= book.id %>" class="swiper-slide"
             ><img src="<%= book.coverImage %>" alt="book image"
           /></a>
           <% }); %> <% } %>

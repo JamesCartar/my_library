@@ -28,7 +28,7 @@ app.use("/categories", categoryRouter);
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI);
-    app.listen(process.env.PORT || 3000, () => {
+    app.listen(process.env.PORT || 1234, () => {
       console.log(`Server is listening on port http://www.localhost:3000`);
     });
   } catch (error) {
