@@ -17,9 +17,9 @@ router.get("/", async (req, res) => {
   const artBooks = await getPdfBooks("Art");
   const biographyBooks = await getPdfBooks("Biography");
   const businessBooks = await getPdfBooks("Business & Career");
-  const childrenBooks = await getPdfBooks("Children & Youth");
-  const enviromentBooks = await getPdfBooks("Enviroment");
-  const fictionBooks = await getPdfBooks("Fiction And Literature");
+  const psychologyBooks = await getPdfBooks("Psychology");
+  const enviromentBooks = await getPdfBooks("Environment");
+  const fictionBooks = await getPdfBooks("Fiction & Literature");
   const healthBooks = await getPdfBooks("Health & Fitness");
   const lifestyleBooks = await getPdfBooks("Lifestyle");
   const personalBooks = await getPdfBooks("Personal Growth");
@@ -36,7 +36,7 @@ router.get("/", async (req, res) => {
     biographyBooks,
     educationBooks,
     businessBooks,
-    childrenBooks,
+    psychologyBooks,
     personalBooks,
     politicsBooks,
     religionBooks,

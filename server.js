@@ -23,7 +23,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false, limit: "10mb" }));
 
 app.use("/", HomeRouter);
-app.use("/category", categoryRouter);
+app.use("/categories", categoryRouter);
 
 const start = async () => {
   try {

@@ -25,7 +25,6 @@ document.querySelector(".search-button").onclick = () => {
 };
 
 window.onscroll = () => {
-  console.log(window.scrollY);
   searchForm.classList.remove("active");
   if (window.scrollY > 150) {
     document.querySelector(".header-2").classList.remove("menu");

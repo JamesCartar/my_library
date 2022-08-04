@@ -5,6 +5,7 @@
 @import "./partials/register.css";
 @import "./partials/home.css";
 @import "./partials/category.css";
+@import "./partials/pagination.css";
 
 :root {
   --primary: #128f12;

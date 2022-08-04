@@ -1,0 +1,54 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+/>
+<div class="hein">
+  <% if(locals.result) { %> <% result.map(book => { %>
+  <img
+    class="items m-2"
+    style="
+      width: 130px;
+      height: 180px;
+      box-shadow: -10px 5px 10px rgba(0, 0, 0, 0.8);
+    "
+    src="<%= book.coverImage %>"
+    alt="book image"
+  />
+  <% }) %> <% } %>
+</div>
+<div
+  style="position: relative"
+  class="books-container d-flex flex-column justify-content-center align-items-center w-100"
+>
+  <div
+    class="data container d-flex flex-wrap"
+    style="width: 100%; height: 95vh"
+  ></div>
+  <ul id="pagination-demo" class="pagination-sm mt-1"></ul>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twbs-pagination/1.4.1/jquery.twbsPagination.min.js"></script>
+<script>
+  let item = $(".items");
+  var items = [];
+  var myNodeList = document.querySelectorAll(".items");
+  Array.from(myNodeList).forEach(function (el) {
+    items.push(el);
+  });
+  let totalPage = Math.floor(item.length / 27);
+  $("#pagination-demo").twbsPagination({
+    totalPages: totalPage,
+    startPage: 1,
+    visiblePages: 5,
+    next: "Next",
+    prev: "Prev",
+    onPageClick: function (event, page) {
+      let startIndex = page === 1 ? 0 : page * 27;
+      let data = items.slice(startIndex, startIndex + 27);
+      $(".data").empty().append(data);
+    },
+  });
+</script>

@@ -159,16 +159,12 @@ a.swiper-slide > img {
   .content button {
     padding: 0.3rem 1rem;
   }
-
   .popularBooks {
     max-width: 300px;
   }
   .stand {
     max-width: 300px;
   }
-}
-
-@media (max-width: 404px) {
 }
 
 @media (max-width: 336px) {

@@ -26,6 +26,15 @@ const pdfBookSchema = new mongoose.Schema({
   fileSize: {
     type: String,
   },
+  bookInfo: {
+    type: String,
+  },
+  quote: {
+    type: String,
+  },
+  previewLink: {
+    type: String,
+  },
   downloadCount: {
     type: String,
   },
@@ -35,7 +44,7 @@ const pdfBookSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("pdfBooks", pdfBookSchema);
+module.exports = mongoose.model("ModifiedPdfBooks", pdfBookSchema);
 
 // detail page
 // const EndUrl = $(this).find(".file-left").children().attr("href");

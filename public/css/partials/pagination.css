@@ -1,0 +1,17 @@
+#pagination-demo {
+  display: inline-block;
+  margin-bottom: 1.75em;
+}
+#pagination-demo li {
+  display: inline-block;
+}
+
+.hein {
+  display: none;
+}
+
+.books-container {
+  width: 100vw;
+  height: auto;
+  background: url("../../images/banner-bg.jpg");
+}
