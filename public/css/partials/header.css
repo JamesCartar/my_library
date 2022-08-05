@@ -246,6 +246,7 @@
   pointer-events: none;
   transform: translateY(-20px);
   transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+  z-index: 100000000;
 }
 
 /* .dropdown > .link:active + .dropdown-menu {
