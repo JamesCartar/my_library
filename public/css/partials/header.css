@@ -51,6 +51,10 @@
   background-color: transparent;
 }
 
+.search-form > button:focus {
+  outline: none;
+}
+
 .search-icon {
   font-size: 1.2rem;
   color: gray;
@@ -100,6 +104,10 @@
 
 .search-button {
   display: none;
+}
+
+.search-button:focus {
+  outline: none;
 }
 
 .hero i {

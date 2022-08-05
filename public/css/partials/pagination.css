@@ -17,9 +17,13 @@
 }
 
 .items {
-  width: 130px;
-  height: 180px;
+  width: 120px;
+  height: 170px;
   box-shadow: -10px 5px 10px rgba(0, 0, 0, 0.8);
+}
+
+.items img {
+  width: 100%;
 }
 
 .bookNotFound {

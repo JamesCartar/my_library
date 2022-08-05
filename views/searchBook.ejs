@@ -9,7 +9,7 @@
         class="col-12 col-md-3 col-lg-2 p-0 d-flex justify-content-center align-items-center d-md-block"
       >
         <img
-          src="<%= book.coverImage %>"
+          src="<%= book.coverImage.split('-s').join('') %>"
           alt="<%= book.title %>"
           class="img-thumbnail"
           style="width: 200px; height: auto"

@@ -9,7 +9,9 @@
       <% if(locals.books) { %> <% books.forEach(book => { %>
       <div class="swiper-slide">
         <a href="/book/<%= book.id %>"
-          ><img src="<%= book.coverImage %>" alt="book image"
+          ><img
+            src="<%= book.coverImage.split('-s').join('') %>"
+            alt="book image"
         /></a>
       </div>
       <% }); %> <% } %>

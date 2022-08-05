@@ -4,8 +4,8 @@
 />
 <div class="hein">
   <% if(locals.result) { %> <% result.map(book => { %>
-  <a href="/book/<%= book.id %>" class="items d-block mx-1">
-    <img class="m-2" src="<%= book.coverImage %>" alt="book image" />
+  <a href="/book/<%= book.id %>" class="items d-block mb-4 m-md-2 mx-0 mx-md-3">
+    <img src="<%= book.coverImage.split('-s').join('') %>" alt="book image" />
   </a>
   <% }) %> <% } %>
 </div>
@@ -14,8 +14,8 @@
   class="books-container d-flex flex-column justify-content-center align-items-center w-100"
 >
   <div
-    class="data container d-flex flex-wrap align-items-center justify-content-center"
-    style="width: 100%; height: auto"
+    class="data container d-flex flex-wrap align-items-center justify-content-around justify-content-md-center mt-3"
+    style="width: 100%; height: auto; gap: 5px"
   ></div>
   <ul id="pagination-demo" class="pagination-sm mt-3"></ul>
 </div>
@@ -35,7 +35,7 @@
   $("#pagination-demo").twbsPagination({
     totalPages: totalPage,
     startPage: 1,
-    visiblePages: 5,
+    visiblePages: 4,
     next: "Next",
     prev: "Prev",
     onPageClick: function (event, page) {

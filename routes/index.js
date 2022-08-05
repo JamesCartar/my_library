@@ -58,13 +58,12 @@ function getPdfBooks(category) {
 
 router.get("/search", async (req, res) => {
   let bookName = req.query.title;
-  console.log(typeof bookName);
   let book = await pdfBookModel.findOne({ title: bookName });
-  let similarBooks = await pdfBookModel
-    .find({ category: book.category })
-    .limit(25);
 
   if ((book != null) & (book != "")) {
+    let similarBooks = await pdfBookModel
+      .find({ category: book.category })
+      .limit(25);
     res.render("searchBook", { book, similarBooks });
     // res.send(book);
   } else {
