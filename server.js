@@ -25,11 +25,12 @@ app.use(bodyParser.urlencoded({ extended: false, limit: "10mb" }));
 app.use("/", HomeRouter);
 app.use("/categories", categoryRouter);
 
+const PORT = process.env.PORT || 7000;
 const start = async () => {
   try {
     await connectDB(process.env.MONGO_URI);
-    app.listen(process.env.PORT || 1234, () => {
-      console.log(`Server is listening on port http://www.localhost:3000`);
+    app.listen(PORT, () => {
+      console.log(`Server is listening on port http://www.localhost:${PORT}`);
     });
   } catch (error) {
     console.log(error);
