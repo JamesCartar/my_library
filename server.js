@@ -9,9 +9,7 @@ const connectDB = require("./db/connect");
 const HomeRouter = require("./routes/index");
 const categoryRouter = require("./routes/category");
 
-// models
-// const userModel = require("../models/user");
-// const pdfBookModel = require("../models/pdfbook");
+
 
 const app = express();
 
