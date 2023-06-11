@@ -3,6 +3,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
+const path = require('path');
 const bodyParser = require("body-parser");
 
 const connectDB = require("./db/connect");
@@ -17,7 +18,8 @@ app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
 app.set("layout", "layouts/layout");
 app.use(expressLayouts);
-app.use(express.static("public"));
+// app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false, limit: "10mb" }));
 
 app.use("/", HomeRouter);
